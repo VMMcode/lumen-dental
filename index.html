@@ -1,0 +1,728 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Lumen Dental — премиальная стоматология на Патриарших в Москве</title>
+  <meta name="description" content="Стоматология Lumen Dental в центре Москвы: лечение зубов под микроскопом, имплантация Straumann, виниры, элайнеры и отбеливание. Приём ежедневно с 9:00 до 21:00. Запись онлайн.">
+  <meta name="theme-color" content="#8995A0">
+
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="ru_RU">
+  <meta property="og:site_name" content="Lumen Dental">
+  <meta property="og:title" content="Lumen Dental — премиальная стоматология в Москве">
+  <meta property="og:description" content="Лечение, имплантация и эстетика улыбки в центре Москвы. Запись онлайн за минуту.">
+  <meta property="og:image" content="img/og-image.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+
+  <!-- Флаг «JS работает»: скрываем блоки для анимации появления только при нём,
+       иначе без JS контент остался бы невидимым -->
+  <script>document.documentElement.classList.add('js');</script>
+  <link rel="preload" href="fonts/manrope-cyrillic-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/onest-cyrillic-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" as="image" href="img/hero-hand.webp" fetchpriority="high">
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/fonts.css">
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/main.js" type="module"></script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Dentist",
+    "name": "Lumen Dental",
+    "description": "Премиальная стоматология в центре Москвы: терапия, имплантация, ортодонтия, эстетика улыбки.",
+    "image": "img/og-image.jpg",
+    "telephone": "+7-495-120-45-45",
+    "email": "hello@lumen-dental.ru",
+    "priceRange": "₽₽₽",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "ул. Малая Бронная, 28",
+      "addressLocality": "Москва",
+      "postalCode": "123104",
+      "addressCountry": "RU"
+    },
+    "geo": { "@type": "GeoCoordinates", "latitude": 55.7627, "longitude": 37.5926 },
+    "openingHoursSpecification": [{
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+      "opens": "09:00",
+      "closes": "21:00"
+    }],
+    "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "312" }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      { "@type": "Question", "name": "Больно ли лечить зубы?", "acceptedAnswer": { "@type": "Answer", "text": "Нет. Перед уколом наносим гель-анестетик, а сам препарат вводим компьютерной системой с контролем скорости. Если вы боитесь стоматологов, лечение можно провести в медикаментозном сне." } },
+      { "@type": "Question", "name": "Сколько служат импланты?", "acceptedAnswer": { "@type": "Answer", "text": "При правильном уходе и регулярной гигиене импланты Straumann и Nobel служат всю жизнь. Мы даём 15 лет гарантии и прописываем её в договоре." } },
+      { "@type": "Question", "name": "Отбеливание безопасно для эмали?", "acceptedAnswer": { "@type": "Answer", "text": "Да, если перед ним провести гигиену и проверить зубы на кариес. Система Philips Zoom работает с защитным гелем для дёсен, а после процедуры мы реминерализуем эмаль." } },
+      { "@type": "Question", "name": "Можно ли оплатить лечение частями?", "acceptedAnswer": { "@type": "Answer", "text": "Да, есть рассрочка без переплаты до 12 месяцев. Ещё мы выдаём документы для налогового вычета: можно вернуть 13% от стоимости лечения." } },
+      { "@type": "Question", "name": "Что делать, если зуб заболел внезапно?", "acceptedAnswer": { "@type": "Answer", "text": "Позвоните нам: при острой боли принимаем в день обращения, без очереди. До приёма не грейте щёку и не полощите зуб горячим." } }
+    ]
+  }
+  </script>
+</head>
+
+<body>
+  <!-- SVG-спрайт: иконки подключаются через <use href="#i-..."> -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-arrow-up" viewBox="0 0 24 24"><path d="M7 17 17 7M8 7h9v9" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-chevron" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-phone" viewBox="0 0 24 24"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2Z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></symbol>
+    <symbol id="i-close" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12.5 4.5 4.5L19 7.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-alert" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M12 7.5v5.5M12 16.2v.3" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+    <symbol id="i-star" viewBox="0 0 24 24"><path d="m12 3 2.7 5.6 6.1.8-4.5 4.2 1.1 6.1L12 16.8l-5.4 2.9 1.1-6.1-4.5-4.2 6.1-.8Z" fill="currentColor"/></symbol>
+    <symbol id="i-telegram" viewBox="0 0 24 24"><path d="M20.5 4.5 3.8 11c-1 .4-1 1.2-.1 1.5l4.2 1.3 1.6 5c.2.6.5.7 1 .3l2.4-2 4.7 3.5c.8.5 1.4.2 1.6-.8l2.8-13.3c.3-1.2-.4-1.7-1.5-1.3Z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></symbol>
+    <symbol id="i-whatsapp" viewBox="0 0 24 24"><path d="M4 20l1.2-4.2A8.5 8.5 0 1 1 8.4 19Z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="M9 8.5c0 3.5 3 6.5 6.5 6.5l1-1.5-2-1-1 .8a5 5 0 0 1-2.8-2.8l.8-1-1-2Z" fill="currentColor"/></symbol>
+    <symbol id="i-logo" viewBox="0 0 32 32"><circle cx="16" cy="16" r="14.5" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="16" cy="16" r="8.5" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="16" cy="16" r="3" fill="currentColor"/></symbol>
+  </svg>
+
+  <a class="skip-link" href="#main">Перейти к содержанию</a>
+
+  <!-- ============ HEADER ============ -->
+  <header class="header" data-header>
+    <div class="header__inner">
+      <a class="logo" href="#top" aria-label="Lumen Dental — на главную">
+        <svg class="logo__mark" aria-hidden="true"><use href="#i-logo"/></svg>
+      </a>
+
+      <nav class="nav" id="nav" aria-label="Основное меню" data-nav>
+        <ul class="nav__list">
+          <li><a class="nav__link" href="#about">О клинике</a></li>
+          <li><a class="nav__link" href="#services">Услуги</a></li>
+          <li><a class="nav__link" href="#doctors">Врачи</a></li>
+          <li><a class="nav__link" href="#prices">Цены</a></li>
+          <li><a class="nav__link" href="#reviews">Отзывы</a></li>
+          <li><a class="nav__link" href="#contacts">Контакты</a></li>
+        </ul>
+        <div class="nav__mobile-extra">
+          <a class="nav__phone" href="tel:+74951204545">+7 (495) 120-45-45</a>
+          <p class="nav__hours">Ежедневно с 9:00 до 21:00</p>
+          <button class="btn btn--primary btn--block" type="button" data-booking-open>Забронировать визит</button>
+        </div>
+      </nav>
+
+      <div class="header__actions">
+        <a class="header__phone" href="tel:+74951204545">+7 (495) 120-45-45</a>
+        <button class="btn btn--primary btn--sm header__cta" type="button" data-booking-open>Забронировать визит</button>
+        <button class="burger" type="button" aria-label="Открыть меню" aria-expanded="false" aria-controls="nav" data-burger>
+          <span class="burger__line"></span>
+          <span class="burger__line"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- ============ HERO ============ -->
+    <section class="hero" id="top" aria-labelledby="hero-title">
+      <div class="hero__card">
+        <div class="hero__visual" aria-hidden="true">
+          <span class="hero__ring hero__ring--1"></span>
+          <span class="hero__ring hero__ring--2"></span>
+          <span class="hero__ring hero__ring--3"></span>
+          <img class="hero__image" src="img/hero-hand.webp" alt="" width="900" height="1200" fetchpriority="high">
+        </div>
+
+        <div class="hero__content">
+          <!-- h1 = видимое название клиники. Ключевая фраза для поисковиков дописана
+               в том же заголовке, но скрыта визуально (остаётся для SEO и скринридеров) -->
+          <h1 class="hero__title" id="hero-title">
+            <span class="hero__word">Lumen</span> <span class="hero__word">dental</span><span class="visually-hidden"> — премиальная стоматология в центре Москвы</span>
+          </h1>
+          <p class="hero__lead">Современная стоматология в&nbsp;центре Москвы: передовые технологии и&nbsp;бережное лечение. В&nbsp;Lumen Dental создаём здоровые, уверенные улыбки&nbsp;— точно, комфортно и&nbsp;с&nbsp;гарантией.</p>
+          <button class="btn btn--light btn--xl hero__cta" type="button" data-booking-open data-service="Консультация">Забронировать консультацию</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ ABOUT ============ -->
+    <section class="about section" id="about" aria-labelledby="about-title">
+      <div class="container about__grid reveal">
+        <figure class="about__photo">
+          <img src="img/about-team.webp" alt="Главный врач Анна Воронцова и ортодонт Михаил Ершов в кабинете клиники Lumen Dental" width="1000" height="1100" loading="lazy">
+        </figure>
+
+        <p class="about__text">Lumen Dental — стоматология на&nbsp;Патриарших, где лечение зубов не&nbsp;превращается в&nbsp;испытание. Работаем под микроскопом, планируем имплантацию по&nbsp;3D-снимку и&nbsp;показываем будущую улыбку до&nbsp;начала лечения. Стоимость фиксируем в&nbsp;плане и&nbsp;не&nbsp;меняем по&nbsp;ходу работы.</p>
+
+        <figure class="about__detail">
+          <img src="img/about-detail.webp" alt="Врач держит стоматологический инструмент" width="600" height="600" loading="lazy">
+          <figcaption>
+            <strong>Все врачи в одной клинике</strong>
+            Терапевты, хирурги и&nbsp;ортодонты работают одной командой&nbsp;— сложный случай ведём от&nbsp;начала до&nbsp;конца.
+          </figcaption>
+        </figure>
+
+        <h2 class="about__title title-2" id="about-title">
+          От профилактики до&nbsp;сложной имплантации <span class="title-2__tail">создаём здоровые улыбки</span>
+        </h2>
+      </div>
+    </section>
+
+    <!-- ============ SERVICES ============ -->
+    <section class="services section" id="services" aria-labelledby="services-title">
+      <div class="container reveal">
+        <div class="section-head section-head--nav">
+          <h2 class="title-2" id="services-title">Стоматологические услуги <span class="title-2__tail">полного цикла</span></h2>
+          <div class="slider-nav" data-slider-nav="services">
+            <button class="slider-nav__btn slider-nav__btn--prev" type="button" aria-label="Предыдущие услуги" data-slider-prev><svg aria-hidden="true"><use href="#i-arrow"/></svg></button>
+            <button class="slider-nav__btn" type="button" aria-label="Следующие услуги" data-slider-next><svg aria-hidden="true"><use href="#i-arrow"/></svg></button>
+          </div>
+        </div>
+      </div>
+
+      <ul class="services__track slider-track reveal" data-slider="services" role="list">
+        <li class="service-card">
+          <img class="service-card__bg" src="img/service-1.webp" alt="" width="800" height="800" loading="lazy">
+          <h3 class="service-card__title">Лечение зубов</h3>
+          <span class="service-card__num" aria-hidden="true">01</span>
+          <button class="service-card__btn" type="button" data-booking-open data-service="Лечение зубов" aria-label="Записаться на лечение зубов"><svg aria-hidden="true"><use href="#i-arrow-up"/></svg></button>
+          <div class="service-card__body">
+            <p class="service-card__text">Кариес и&nbsp;каналы под микроскопом&nbsp;— без боли, чаще всего за&nbsp;один визит.</p>
+            <p class="service-card__price">от 6 500 ₽</p>
+          </div>
+        </li>
+        <li class="service-card">
+          <img class="service-card__bg" src="img/service-2.webp" alt="" width="800" height="800" loading="lazy">
+          <h3 class="service-card__title">Имплантация</h3>
+          <span class="service-card__num" aria-hidden="true">02</span>
+          <button class="service-card__btn" type="button" data-booking-open data-service="Имплантация" aria-label="Записаться на имплантацию"><svg aria-hidden="true"><use href="#i-arrow-up"/></svg></button>
+          <div class="service-card__body">
+            <p class="service-card__text">Straumann и&nbsp;Nobel по&nbsp;навигационному шаблону. Пожизненная гарантия.</p>
+            <p class="service-card__price">от 65 000 ₽</p>
+          </div>
+        </li>
+        <li class="service-card">
+          <img class="service-card__bg" src="img/service-3.webp" alt="" width="800" height="800" loading="lazy">
+          <h3 class="service-card__title">Элайнеры и брекеты</h3>
+          <span class="service-card__num" aria-hidden="true">03</span>
+          <button class="service-card__btn" type="button" data-booking-open data-service="Элайнеры и брекеты" aria-label="Записаться на исправление прикуса"><svg aria-hidden="true"><use href="#i-arrow-up"/></svg></button>
+          <div class="service-card__body">
+            <p class="service-card__text">Ровная улыбка с&nbsp;Invisalign&nbsp;— незаметно для окружающих.</p>
+            <p class="service-card__price">от 180 000 ₽</p>
+          </div>
+        </li>
+        <li class="service-card">
+          <img class="service-card__bg" src="img/service-4.webp" alt="" width="800" height="800" loading="lazy">
+          <h3 class="service-card__title">Виниры</h3>
+          <span class="service-card__num" aria-hidden="true">04</span>
+          <button class="service-card__btn" type="button" data-booking-open data-service="Виниры" aria-label="Записаться на установку виниров"><svg aria-hidden="true"><use href="#i-arrow-up"/></svg></button>
+          <div class="service-card__body">
+            <p class="service-card__text">Керамика E.max. Примерка результата до&nbsp;изготовления.</p>
+            <p class="service-card__price">от 55 000 ₽ за зуб</p>
+          </div>
+        </li>
+        <li class="service-card">
+          <img class="service-card__bg" src="img/service-5.webp" alt="" width="800" height="800" loading="lazy">
+          <h3 class="service-card__title">Отбеливание</h3>
+          <span class="service-card__num" aria-hidden="true">05</span>
+          <button class="service-card__btn" type="button" data-booking-open data-service="Отбеливание" aria-label="Записаться на отбеливание"><svg aria-hidden="true"><use href="#i-arrow-up"/></svg></button>
+          <div class="service-card__body">
+            <p class="service-card__text">Philips Zoom: до&nbsp;8&nbsp;тонов светлее за&nbsp;час.</p>
+            <p class="service-card__price">от 28 000 ₽</p>
+          </div>
+        </li>
+        <li class="service-card">
+          <img class="service-card__bg" src="img/service-6.webp" alt="" width="800" height="800" loading="lazy">
+          <h3 class="service-card__title">Гигиена</h3>
+          <span class="service-card__num" aria-hidden="true">06</span>
+          <button class="service-card__btn" type="button" data-booking-open data-service="Профессиональная гигиена" aria-label="Записаться на профессиональную гигиену"><svg aria-hidden="true"><use href="#i-arrow-up"/></svg></button>
+          <div class="service-card__body">
+            <p class="service-card__text">Ультразвук, Air Flow и&nbsp;полировка&nbsp;— раз в&nbsp;полгода.</p>
+            <p class="service-card__price">от 9 500 ₽</p>
+          </div>
+        </li>
+      </ul>
+    </section>
+
+    <!-- ============ TRUST + STATS ============ -->
+    <section class="trust section" aria-labelledby="trust-title">
+      <div class="container trust__grid reveal">
+        <div class="trust__intro">
+          <h2 class="title-2" id="trust-title">Настоящая забота <span class="title-2__tail">начинается с&nbsp;доверия</span></h2>
+          <div class="trust__text">
+            <h3 class="trust__subtitle">Почему нам доверяют</h3>
+            <p>Каждый этап лечения мы фиксируем на&nbsp;фото и&nbsp;видео, а&nbsp;снимки отдаём пациенту. Стерилизация проходит по&nbsp;классу B, как в&nbsp;хирургических отделениях. Для&nbsp;тревожных пациентов работаем в&nbsp;медикаментозном сне под контролем анестезиолога.</p>
+          </div>
+        </div>
+        <figure class="trust__photo">
+          <img src="img/clinic.webp" alt="Врачи Lumen Dental проводят лечение в оборудованном кабинете" width="1600" height="1000" loading="lazy">
+        </figure>
+
+        <ul class="stats" role="list">
+          <li class="stat">
+            <p class="stat__value">12 лет</p>
+            <h3 class="stat__label">работаем на Патриарших</h3>
+            <p class="stat__text">С 2014 года клиника не меняла адрес и&nbsp;ведущих врачей.</p>
+          </li>
+          <li class="stat stat--accent">
+            <p class="stat__value">9 400+</p>
+            <h3 class="stat__label">пациентов вылечили</h3>
+            <p class="stat__text">Две трети приходят по&nbsp;рекомендации друзей и&nbsp;родных.</p>
+          </li>
+          <li class="stat">
+            <p class="stat__value">15 лет</p>
+            <h3 class="stat__label">гарантии на импланты</h3>
+            <p class="stat__text">Прописываем в&nbsp;договоре вместе с&nbsp;планом контрольных осмотров.</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ============ BEFORE / AFTER ============ -->
+    <section class="cases section" aria-labelledby="cases-title">
+      <div class="container cases__grid reveal">
+        <div class="cases__intro">
+          <h2 class="title-2 cases__title" id="cases-title">Результат, <span class="title-2__tail">который видно сразу</span></h2>
+          <p class="cases__text">Восемь керамических виниров E.max за&nbsp;два визита. Пациентка хотела убрать желтизну и&nbsp;выровнять край зубов, сохранив естественную форму.</p>
+          <dl class="cases__meta">
+            <div><dt>Срок</dt><dd>12 дней</dd></div>
+            <div><dt>Врач</dt><dd>Екатерина Лаврова</dd></div>
+          </dl>
+          <button class="btn btn--primary cases__cta" type="button" data-booking-open data-service="Виниры">Хочу такую улыбку</button>
+        </div>
+
+        <div class="compare" data-compare style="--pos: 50%">
+          <img class="compare__img compare__img--after" src="img/smile-after.webp" alt="Улыбка после установки виниров: ровные белые зубы" width="1600" height="1000" loading="lazy" draggable="false">
+          <img class="compare__img compare__img--before" src="img/smile-before.webp" alt="Улыбка до лечения: зубы с желтоватым оттенком" width="1600" height="1000" loading="lazy" draggable="false">
+          <span class="compare__label compare__label--before" aria-hidden="true">До</span>
+          <span class="compare__label compare__label--after" aria-hidden="true">После</span>
+          <span class="compare__handle" aria-hidden="true">
+            <span class="compare__knob">
+              <svg class="compare__arrow compare__arrow--left"><use href="#i-chevron"/></svg>
+              <svg class="compare__arrow"><use href="#i-chevron"/></svg>
+            </span>
+          </span>
+          <input class="compare__range" type="range" min="0" max="100" value="50" aria-label="Сравнить фото до и после лечения" data-compare-range>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ DOCTORS ============ -->
+    <section class="doctors section" id="doctors" aria-labelledby="doctors-title">
+      <div class="container doctors__inner reveal">
+        <h2 class="visually-hidden" id="doctors-title">Врачи клиники</h2>
+        <p class="manifesto">В Lumen Dental работают врачи, к&nbsp;которым коллеги отправляют сложные случаи. Каждый ведёт пациента <span class="manifesto__tail">от&nbsp;диагностики до&nbsp;контрольного осмотра и&nbsp;отвечает за&nbsp;результат лично.</span></p>
+
+        <div class="doctors__about">
+          <p>Врачи Lumen Dental&nbsp;— практикующие специалисты с&nbsp;опытом от&nbsp;7 до&nbsp;18&nbsp;лет. Каждый год они проходят обучение в&nbsp;Европе, выступают на&nbsp;профессиональных конференциях и&nbsp;состоят в&nbsp;Стоматологической ассоциации России.</p>
+          <p>Мы считаем, что стоматология&nbsp;— это не&nbsp;только лечение, но&nbsp;и&nbsp;спокойствие пациента. Поэтому за&nbsp;каждым закреплён лечащий врач: он ведёт вас от&nbsp;первой консультации до&nbsp;контрольного осмотра и&nbsp;всегда на&nbsp;связи.</p>
+        </div>
+      </div>
+
+      <div class="doctors__band reveal">
+        <div class="container doctors__controls">
+          <div class="slider-nav" data-slider-nav="doctors">
+            <button class="slider-nav__btn slider-nav__btn--prev" type="button" aria-label="Предыдущие врачи" data-slider-prev><svg aria-hidden="true"><use href="#i-arrow"/></svg></button>
+            <button class="slider-nav__btn" type="button" aria-label="Следующие врачи" data-slider-next><svg aria-hidden="true"><use href="#i-arrow"/></svg></button>
+          </div>
+        </div>
+        <ul class="doctors__track slider-track" data-slider="doctors" role="list">
+          <li class="doctor-card">
+            <h3 class="doctor-card__name">Анна Воронцова</h3>
+            <p class="doctor-card__role">Главный врач, хирург-имплантолог</p>
+            <p class="doctor-card__exp">Стаж 18 лет</p>
+            <img class="doctor-card__photo" src="img/doctor-1.webp" alt="Анна Воронцова, главный врач" width="800" height="1000" loading="lazy">
+            <button class="doctor-card__btn btn btn--light btn--sm" type="button" data-booking-open data-doctor="Анна Воронцова">Забронировать визит</button>
+          </li>
+          <li class="doctor-card">
+            <h3 class="doctor-card__name">Михаил Ершов</h3>
+            <p class="doctor-card__role">Ортодонт</p>
+            <p class="doctor-card__exp">Стаж 14 лет</p>
+            <img class="doctor-card__photo" src="img/doctor-2.webp" alt="Михаил Ершов, ортодонт" width="800" height="1000" loading="lazy">
+            <button class="doctor-card__btn btn btn--light btn--sm" type="button" data-booking-open data-doctor="Михаил Ершов">Забронировать визит</button>
+          </li>
+          <li class="doctor-card">
+            <h3 class="doctor-card__name">Екатерина Лаврова</h3>
+            <p class="doctor-card__role">Стоматолог-эстетист</p>
+            <p class="doctor-card__exp">Стаж 11 лет</p>
+            <img class="doctor-card__photo" src="img/doctor-3.webp" alt="Екатерина Лаврова, стоматолог-эстетист" width="800" height="1000" loading="lazy">
+            <button class="doctor-card__btn btn btn--light btn--sm" type="button" data-booking-open data-doctor="Екатерина Лаврова">Забронировать визит</button>
+          </li>
+          <li class="doctor-card">
+            <h3 class="doctor-card__name">Дмитрий Соколов</h3>
+            <p class="doctor-card__role">Челюстно-лицевой хирург</p>
+            <p class="doctor-card__exp">Стаж 16 лет</p>
+            <img class="doctor-card__photo" src="img/doctor-4.webp" alt="Дмитрий Соколов, челюстно-лицевой хирург" width="800" height="1000" loading="lazy">
+            <button class="doctor-card__btn btn btn--light btn--sm" type="button" data-booking-open data-doctor="Дмитрий Соколов">Забронировать визит</button>
+          </li>
+          <li class="doctor-card">
+            <h3 class="doctor-card__name">Ольга Миронова</h3>
+            <p class="doctor-card__role">Терапевт, лечение под микроскопом</p>
+            <p class="doctor-card__exp">Стаж 12 лет</p>
+            <img class="doctor-card__photo" src="img/doctor-5.webp" alt="Ольга Миронова, стоматолог-терапевт" width="800" height="1000" loading="lazy">
+            <button class="doctor-card__btn btn btn--light btn--sm" type="button" data-booking-open data-doctor="Ольга Миронова">Забронировать визит</button>
+          </li>
+          <li class="doctor-card">
+            <h3 class="doctor-card__name">Сергей Белов</h3>
+            <p class="doctor-card__role">Ортопед, коронки и протезирование</p>
+            <p class="doctor-card__exp">Стаж 15 лет</p>
+            <img class="doctor-card__photo" src="img/doctor-6.webp" alt="Сергей Белов, стоматолог-ортопед" width="800" height="1000" loading="lazy">
+            <button class="doctor-card__btn btn btn--light btn--sm" type="button" data-booking-open data-doctor="Сергей Белов">Забронировать визит</button>
+          </li>
+          <li class="doctor-card">
+            <h3 class="doctor-card__name">Алина Кравец</h3>
+            <p class="doctor-card__role">Гигиенист</p>
+            <p class="doctor-card__exp">Стаж 7 лет</p>
+            <img class="doctor-card__photo" src="img/doctor-7.webp" alt="Алина Кравец, гигиенист" width="800" height="1000" loading="lazy">
+            <button class="doctor-card__btn btn btn--light btn--sm" type="button" data-booking-open data-doctor="Алина Кравец">Забронировать визит</button>
+          </li>
+          <li class="doctor-card">
+            <h3 class="doctor-card__name">Павел Орлов</h3>
+            <p class="doctor-card__role">Анестезиолог, лечение во сне</p>
+            <p class="doctor-card__exp">Стаж 13 лет</p>
+            <img class="doctor-card__photo" src="img/doctor-8.webp" alt="Павел Орлов, анестезиолог" width="800" height="1000" loading="lazy">
+            <button class="doctor-card__btn btn btn--light btn--sm" type="button" data-booking-open data-doctor="Павел Орлов">Забронировать визит</button>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ============ PRICES ============ -->
+    <section class="prices section" id="prices" aria-labelledby="prices-title">
+      <div class="container prices__grid reveal">
+        <div class="prices__intro">
+          <h2 class="title-2" id="prices-title">Цены <span class="title-2__tail">без сюрпризов</span></h2>
+          <p class="prices__text">Итоговую стоимость фиксируем в&nbsp;плане лечения после диагностики. Можно оплатить частями: рассрочка без переплаты до&nbsp;12 месяцев.</p>
+        </div>
+
+        <div class="tabs" data-tabs>
+          <div class="tabs__list" role="tablist" aria-label="Категории услуг">
+            <button class="tabs__tab" role="tab" id="tab-therapy" aria-controls="panel-therapy" aria-selected="true">Терапия</button>
+            <button class="tabs__tab" role="tab" id="tab-implants" aria-controls="panel-implants" aria-selected="false" tabindex="-1">Имплантация</button>
+            <button class="tabs__tab" role="tab" id="tab-ortho" aria-controls="panel-ortho" aria-selected="false" tabindex="-1">Ортодонтия</button>
+            <button class="tabs__tab" role="tab" id="tab-aesthetic" aria-controls="panel-aesthetic" aria-selected="false" tabindex="-1">Эстетика</button>
+            <button class="tabs__tab" role="tab" id="tab-hygiene" aria-controls="panel-hygiene" aria-selected="false" tabindex="-1">Гигиена</button>
+          </div>
+
+          <div class="tabs__panel" role="tabpanel" id="panel-therapy" aria-labelledby="tab-therapy" tabindex="0">
+            <ul class="price-list" role="list">
+              <li class="price-list__row"><span>Консультация и план лечения</span><span>2 500 ₽</span></li>
+              <li class="price-list__row"><span>Лечение кариеса с реставрацией</span><span>от 6 500 ₽</span></li>
+              <li class="price-list__row"><span>Лечение каналов под микроскопом</span><span>от 18 000 ₽</span></li>
+              <li class="price-list__row"><span>Компьютерная томография (КТ)</span><span>3 200 ₽</span></li>
+              <li class="price-list__row"><span>Анестезия</span><span>бесплатно</span></li>
+            </ul>
+          </div>
+          <div class="tabs__panel" role="tabpanel" id="panel-implants" aria-labelledby="tab-implants" tabindex="0" hidden>
+            <ul class="price-list" role="list">
+              <li class="price-list__row"><span>Имплант Straumann под ключ</span><span>от 95 000 ₽</span></li>
+              <li class="price-list__row"><span>Имплант Nobel Biocare под ключ</span><span>от 85 000 ₽</span></li>
+              <li class="price-list__row"><span>Имплант Osstem под ключ</span><span>от 65 000 ₽</span></li>
+              <li class="price-list__row"><span>Синус-лифтинг</span><span>от 45 000 ₽</span></li>
+              <li class="price-list__row"><span>Удаление зуба мудрости</span><span>от 12 000 ₽</span></li>
+            </ul>
+          </div>
+          <div class="tabs__panel" role="tabpanel" id="panel-ortho" aria-labelledby="tab-ortho" tabindex="0" hidden>
+            <ul class="price-list" role="list">
+              <li class="price-list__row"><span>Консультация ортодонта с 3D-сканом</span><span>4 000 ₽</span></li>
+              <li class="price-list__row"><span>Элайнеры Invisalign, полный курс</span><span>от 380 000 ₽</span></li>
+              <li class="price-list__row"><span>Элайнеры Star Smile, полный курс</span><span>от 180 000 ₽</span></li>
+              <li class="price-list__row"><span>Керамические брекеты, одна челюсть</span><span>от 95 000 ₽</span></li>
+            </ul>
+          </div>
+          <div class="tabs__panel" role="tabpanel" id="panel-aesthetic" aria-labelledby="tab-aesthetic" tabindex="0" hidden>
+            <ul class="price-list" role="list">
+              <li class="price-list__row"><span>Цифровой дизайн улыбки (DSD)</span><span>15 000 ₽</span></li>
+              <li class="price-list__row"><span>Керамический винир E.max</span><span>от 55 000 ₽</span></li>
+              <li class="price-list__row"><span>Композитный винир</span><span>от 22 000 ₽</span></li>
+              <li class="price-list__row"><span>Отбеливание Philips Zoom</span><span>от 28 000 ₽</span></li>
+            </ul>
+          </div>
+          <div class="tabs__panel" role="tabpanel" id="panel-hygiene" aria-labelledby="tab-hygiene" tabindex="0" hidden>
+            <ul class="price-list" role="list">
+              <li class="price-list__row"><span>Профессиональная гигиена</span><span>9 500 ₽</span></li>
+              <li class="price-list__row"><span>Гигиена для пациентов с брекетами</span><span>11 000 ₽</span></li>
+              <li class="price-list__row"><span>Фторирование эмали</span><span>3 000 ₽</span></li>
+              <li class="price-list__row"><span>Детская гигиена</span><span>5 500 ₽</span></li>
+            </ul>
+          </div>
+
+          <button class="btn btn--primary tabs__cta" type="button" data-booking-open data-service="Консультация">Записаться на консультацию</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ REVIEWS ============ -->
+    <section class="reviews section" id="reviews" aria-labelledby="reviews-title">
+      <div class="container reviews__inner reveal">
+        <div class="section-head reviews__head">
+          <h2 class="title-2" id="reviews-title">Что говорят <span class="title-2__tail">наши пациенты</span></h2>
+          <p class="rating reviews__rating">
+            <span class="rating__stars" aria-hidden="true"><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg></span>
+            <span><strong>4,9 из 5</strong> на Яндекс Картах, 312 отзывов</span>
+          </p>
+        </div>
+
+        <ul class="reviews__list" role="list">
+          <li class="review">
+            <div class="review__head">
+              <img class="review__avatar" src="img/review-1.webp" alt="" width="200" height="200" loading="lazy">
+              <div>
+                <h3 class="review__name">Ольга К.</h3>
+                <p class="review__meta">Виниры, ПроДокторов</p>
+              </div>
+            </div>
+            <p class="review__text">Боялась, что виниры будут выглядеть как искусственные зубы. Екатерина Андреевна сначала показала макет прямо у&nbsp;меня во&nbsp;рту, и&nbsp;мы вместе поправили форму. В&nbsp;итоге никто не&nbsp;верит, что это не&nbsp;мои зубы.</p>
+          </li>
+          <li class="review">
+            <div class="review__head">
+              <img class="review__avatar" src="img/review-2.webp" alt="" width="200" height="200" loading="lazy">
+              <div>
+                <h3 class="review__name">Артём С.</h3>
+                <p class="review__meta">Имплантация, Яндекс Карты</p>
+              </div>
+            </div>
+            <p class="review__text">Ставил два импланта у&nbsp;Анны Сергеевны. Всё объяснили по&nbsp;снимку, назвали цену и&nbsp;уложились в&nbsp;неё до&nbsp;рубля. На&nbsp;следующий день уже был на&nbsp;работе.</p>
+          </li>
+          <li class="review">
+            <div class="review__head">
+              <img class="review__avatar" src="img/review-3.webp" alt="" width="200" height="200" loading="lazy">
+              <div>
+                <h3 class="review__name">Наталья В.</h3>
+                <p class="review__meta">Лечение, Яндекс Карты</p>
+              </div>
+            </div>
+            <p class="review__text">Панически боюсь стоматологов, поэтому лечила зубы во&nbsp;сне. Проснулась, а&nbsp;всё уже сделано. Администраторы на&nbsp;следующий день сами позвонили узнать, как я&nbsp;себя чувствую.</p>
+          </li>
+          <li class="review">
+            <div class="review__head">
+              <img class="review__avatar" src="img/review-4.webp" alt="" width="200" height="200" loading="lazy">
+              <div>
+                <h3 class="review__name">Игорь М.</h3>
+                <p class="review__meta">Элайнеры, ПроДокторов</p>
+              </div>
+            </div>
+            <p class="review__text">Носил элайнеры год, коллеги так и&nbsp;не&nbsp;заметили. Михаил Олегович на&nbsp;первом приёме показал, как зубы будут двигаться по&nbsp;неделям, и&nbsp;результат совпал с&nbsp;моделью.</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ============ FAQ ============ -->
+    <section class="faq section" aria-labelledby="faq-title">
+      <div class="container">
+        <div class="faq__panel reveal">
+          <div class="faq__aside">
+            <p class="faq__wordmark" aria-hidden="true">Lumen dental</p>
+            <div class="faq__intro">
+              <h2 class="faq__title" id="faq-title">Вопросы и ответы</h2>
+              <p class="faq__text">Собрали то, о&nbsp;чём пациенты спрашивают чаще всего. Не&nbsp;нашли свой вопрос? Позвоните, администратор ответит или соединит с&nbsp;врачом.</p>
+            </div>
+          </div>
+
+          <ul class="accordion" role="list" data-accordion>
+            <li class="accordion__item">
+              <h3 class="accordion__heading">
+                <button class="accordion__trigger" type="button" aria-expanded="true" aria-controls="faq-1" id="faq-1-btn">Больно ли лечить зубы?<span class="accordion__icon" aria-hidden="true"><svg><use href="#i-chevron"/></svg></span></button>
+              </h3>
+              <div class="accordion__panel is-open" id="faq-1" role="region" aria-labelledby="faq-1-btn"><div class="accordion__inner"><p>Нет. Перед уколом наносим гель-анестетик, а&nbsp;сам препарат вводим компьютерной системой с&nbsp;контролем скорости. Если вы боитесь стоматологов, лечение можно провести в&nbsp;медикаментозном сне.</p></div></div>
+            </li>
+            <li class="accordion__item">
+              <h3 class="accordion__heading">
+                <button class="accordion__trigger" type="button" aria-expanded="false" aria-controls="faq-2" id="faq-2-btn">Сколько служат импланты?<span class="accordion__icon" aria-hidden="true"><svg><use href="#i-chevron"/></svg></span></button>
+              </h3>
+              <div class="accordion__panel" id="faq-2" role="region" aria-labelledby="faq-2-btn"><div class="accordion__inner"><p>При правильном уходе и&nbsp;регулярной гигиене импланты Straumann и&nbsp;Nobel служат всю жизнь. Мы даём 15 лет гарантии и&nbsp;прописываем её в&nbsp;договоре.</p></div></div>
+            </li>
+            <li class="accordion__item">
+              <h3 class="accordion__heading">
+                <button class="accordion__trigger" type="button" aria-expanded="false" aria-controls="faq-3" id="faq-3-btn">Отбеливание безопасно для эмали?<span class="accordion__icon" aria-hidden="true"><svg><use href="#i-chevron"/></svg></span></button>
+              </h3>
+              <div class="accordion__panel" id="faq-3" role="region" aria-labelledby="faq-3-btn"><div class="accordion__inner"><p>Да, если перед ним провести гигиену и&nbsp;проверить зубы на&nbsp;кариес. Система Philips Zoom работает с&nbsp;защитным гелем для дёсен, а&nbsp;после процедуры мы реминерализуем эмаль.</p></div></div>
+            </li>
+            <li class="accordion__item">
+              <h3 class="accordion__heading">
+                <button class="accordion__trigger" type="button" aria-expanded="false" aria-controls="faq-4" id="faq-4-btn">Можно ли оплатить лечение частями?<span class="accordion__icon" aria-hidden="true"><svg><use href="#i-chevron"/></svg></span></button>
+              </h3>
+              <div class="accordion__panel" id="faq-4" role="region" aria-labelledby="faq-4-btn"><div class="accordion__inner"><p>Да, есть рассрочка без переплаты до&nbsp;12 месяцев. Ещё мы выдаём документы для налогового вычета: можно вернуть 13% от&nbsp;стоимости лечения.</p></div></div>
+            </li>
+            <li class="accordion__item">
+              <h3 class="accordion__heading">
+                <button class="accordion__trigger" type="button" aria-expanded="false" aria-controls="faq-5" id="faq-5-btn">Что делать, если зуб заболел внезапно?<span class="accordion__icon" aria-hidden="true"><svg><use href="#i-chevron"/></svg></span></button>
+              </h3>
+              <div class="accordion__panel" id="faq-5" role="region" aria-labelledby="faq-5-btn"><div class="accordion__inner"><p>Позвоните нам: при острой боли принимаем в&nbsp;день обращения, без очереди. До&nbsp;приёма не&nbsp;грейте щёку и&nbsp;не&nbsp;полощите зуб горячим.</p></div></div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ BOOKING ============ -->
+    <section class="booking section" id="booking" aria-labelledby="booking-title">
+      <div class="container booking__grid reveal">
+        <figure class="booking__photo">
+          <img src="img/booking.webp" alt="Врач в перчатках готовит инструменты к приёму" width="900" height="1000" loading="lazy">
+        </figure>
+
+        <div class="booking__content">
+          <h2 class="title-2 booking__title" id="booking-title">От первого визита до&nbsp;идеальной улыбки <span class="title-2__tail">с&nbsp;заботой о&nbsp;вашем комфорте</span></h2>
+          <p class="booking__text">Оставьте телефон, и&nbsp;администратор перезвонит за&nbsp;15 минут, чтобы подобрать удобное время. Консультация с&nbsp;диагностикой займёт около часа.</p>
+
+          <!-- Форма. В модалку она клонируется через JS с префиксом id -->
+          <div class="form-wrap" data-form-wrap>
+            <form class="form" novalidate data-booking-form>
+              <div class="form__context" data-form-context hidden></div>
+
+              <div class="field field--half">
+                <input class="field__input" id="bf-name" name="name" type="text" autocomplete="name" placeholder=" " required minlength="2" aria-describedby="bf-name-error">
+                <label class="field__label" for="bf-name">Ваше имя</label>
+                <p class="field__error" id="bf-name-error" aria-live="polite"></p>
+              </div>
+
+              <div class="field field--half">
+                <input class="field__input" id="bf-phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" placeholder=" " required aria-describedby="bf-phone-error" data-phone-mask>
+                <label class="field__label" for="bf-phone">Телефон</label>
+                <p class="field__error" id="bf-phone-error" aria-live="polite"></p>
+              </div>
+
+              <div class="field field--select">
+                <select class="field__input" id="bf-service" name="service" data-service-select>
+                  <option value="Консультация" selected>Консультация и план лечения</option>
+                  <option value="Лечение зубов">Лечение зубов</option>
+                  <option value="Имплантация">Имплантация</option>
+                  <option value="Элайнеры и брекеты">Элайнеры и брекеты</option>
+                  <option value="Виниры">Виниры</option>
+                  <option value="Отбеливание">Отбеливание</option>
+                  <option value="Профессиональная гигиена">Профессиональная гигиена</option>
+                </select>
+                <label class="field__label field__label--static" for="bf-service">Услуга</label>
+                <svg class="field__chevron" aria-hidden="true"><use href="#i-chevron"/></svg>
+              </div>
+
+              <fieldset class="chips">
+                <legend class="chips__legend">Когда удобно прийти</legend>
+                <label class="chip"><input type="radio" name="time" value="Утро" checked><span>Утром</span></label>
+                <label class="chip"><input type="radio" name="time" value="День"><span>Днём</span></label>
+                <label class="chip"><input type="radio" name="time" value="Вечер"><span>Вечером</span></label>
+              </fieldset>
+
+              <div class="checkbox-field">
+                <label class="checkbox">
+                  <input class="checkbox__input" type="checkbox" name="consent" id="bf-consent" required aria-describedby="bf-consent-error">
+                  <span class="checkbox__box" aria-hidden="true"><svg><use href="#i-check"/></svg></span>
+                  <span class="checkbox__text">Согласен(на) на&nbsp;обработку персональных данных по&nbsp;<a href="#" class="link">политике конфиденциальности</a></span>
+                </label>
+                <p class="field__error" id="bf-consent-error" aria-live="polite"></p>
+              </div>
+
+              <p class="form__alert" role="alert" data-form-alert hidden>
+                <svg aria-hidden="true"><use href="#i-alert"/></svg>
+                <span>Не удалось отправить заявку: нет связи с сервером. Попробуйте ещё раз или позвоните <a class="link" href="tel:+74951204545">+7 (495) 120-45-45</a>.</span>
+              </p>
+
+              <button class="btn btn--primary form__submit" type="submit" data-submit>
+                <span class="btn__label">Забронировать визит</span>
+                <span class="btn__spinner" aria-hidden="true"></span>
+              </button>
+            </form>
+
+            <div class="form-success" data-form-success hidden tabindex="-1">
+              <span class="form-success__icon" aria-hidden="true"><svg><use href="#i-check"/></svg></span>
+              <h3 class="form-success__title">Заявка отправлена</h3>
+              <p class="form-success__text" data-success-text>Администратор позвонит вам в&nbsp;течение 15 минут, чтобы подтвердить время приёма.</p>
+              <button class="btn btn--ghost" type="button" data-form-reset>Записать ещё одного человека</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CONTACTS ============ -->
+    <section class="contacts section" id="contacts" aria-labelledby="contacts-title">
+      <div class="container contacts__grid reveal">
+        <div class="contacts__info">
+          <h2 class="title-2" id="contacts-title">Как нас <span class="title-2__tail">найти</span></h2>
+          <address class="contacts__list">
+            <div class="contacts__item">
+              <p class="contacts__label">Адрес</p>
+              <p>Москва, ул.&nbsp;Малая Бронная,&nbsp;28<br>5 минут пешком от&nbsp;метро «Пушкинская»</p>
+            </div>
+            <div class="contacts__item">
+              <p class="contacts__label">Часы работы</p>
+              <p>Ежедневно с&nbsp;9:00 до&nbsp;21:00<br>Острая боль — приём в&nbsp;день обращения</p>
+            </div>
+            <div class="contacts__item">
+              <p class="contacts__label">Связь</p>
+              <p><a class="link" href="tel:+74951204545">+7 (495) 120-45-45</a><br><a class="link" href="mailto:hello@lumen-dental.ru">hello@lumen-dental.ru</a></p>
+            </div>
+          </address>
+          <div class="contacts__social">
+            <a class="social-btn" href="#" aria-label="Написать в Telegram"><svg aria-hidden="true"><use href="#i-telegram"/></svg></a>
+            <a class="social-btn" href="#" aria-label="Написать в WhatsApp"><svg aria-hidden="true"><use href="#i-whatsapp"/></svg></a>
+            <button class="btn btn--primary" type="button" data-booking-open>Забронировать визит</button>
+          </div>
+        </div>
+
+        <div class="map" data-map data-src="https://yandex.ru/map-widget/v1/?ll=37.5926%2C55.7627&amp;z=16&amp;pt=37.5926%2C55.7627%2Cpm2gnm">
+          <p class="map__placeholder">Загружаем карту…</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="footer">
+    <div class="container reveal">
+      <p class="footer__wordmark" aria-hidden="true">Lumen dental</p>
+      <div class="footer__grid">
+        <h2 class="title-2 footer__title">Свяжитесь с нами <span class="title-2__tail">для консультации</span></h2>
+
+        <div class="footer__menus">
+          <nav class="footer__nav" aria-label="Меню в подвале">
+            <ul class="footer__list" role="list">
+              <li><a href="#about">О клинике</a></li>
+              <li><a href="#services">Услуги</a></li>
+              <li><a href="#doctors">Врачи</a></li>
+              <li><a href="#prices">Цены</a></li>
+              <li><a href="#reviews">Отзывы</a></li>
+              <li><a href="#contacts">Контакты</a></li>
+            </ul>
+          </nav>
+          <ul class="footer__list" role="list" aria-label="Мы в соцсетях">
+            <li><a href="#">Telegram</a></li>
+            <li><a href="#">WhatsApp</a></li>
+            <li><a href="#">ВКонтакте</a></li>
+            <li><a href="#">Яндекс Карты</a></li>
+          </ul>
+        </div>
+
+        <div class="footer__contact">
+          <a class="footer__phone" href="tel:+74951204545">+7 (495) 120-45-45</a>
+          <p class="footer__copyright">© 2026 Lumen Dental</p>
+        </div>
+        <a class="footer__email" href="mailto:hello@lumen-dental.ru">hello@lumen-dental.ru</a>
+        <p class="footer__legal">ООО «Люмен Дентал», лицензия №&nbsp;Л041-01137-77/00368921. <a href="#" class="link">Политика конфиденциальности</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Плавающая кнопка записи (мобилка) -->
+  <div class="float-cta" data-float-cta>
+    <a class="float-cta__phone" href="tel:+74951204545" aria-label="Позвонить в клинику"><svg aria-hidden="true"><use href="#i-phone"/></svg></a>
+    <button class="btn btn--primary float-cta__btn" type="button" data-booking-open>Забронировать визит</button>
+  </div>
+
+  <!-- Модалка записи: нативный <dialog> даёт фокус-ловушку и Esc из коробки -->
+  <dialog class="modal" data-modal aria-labelledby="modal-title">
+    <div class="modal__box">
+      <button class="modal__close" type="button" aria-label="Закрыть окно записи" data-modal-close><svg aria-hidden="true"><use href="#i-close"/></svg></button>
+      <h2 class="modal__title" id="modal-title">Бронирование визита</h2>
+      <p class="modal__text">Администратор перезвонит за&nbsp;15 минут и&nbsp;закрепит за&nbsp;вами удобное время.</p>
+      <div class="modal__form" data-modal-form></div>
+    </div>
+  </dialog>
+</body>
+</html>

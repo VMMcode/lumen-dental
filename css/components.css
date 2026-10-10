@@ -1,0 +1,631 @@
+/* ---------- КОМПОНЕНТЫ ---------- */
+@layer components {
+  /* Ссылка доступности */
+  .skip-link {
+    position: fixed;
+    top: 0.5rem;
+    left: 0.5rem;
+    z-index: 100;
+    padding: 0.75rem 1.25rem;
+    border-radius: var(--r-pill);
+    background: var(--c-ink);
+    color: var(--c-white);
+    transform: translateY(-200%);
+    transition: transform var(--dur) var(--ease-out);
+  }
+  .skip-link:focus {
+    transform: none;
+  }
+
+  .link {
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 0.2em;
+    transition: color var(--dur);
+  }
+  .link:hover {
+    color: var(--c-mist-ink);
+  }
+
+  /* Логотип */
+  .logo {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.625rem;
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: var(--fs-md);
+    letter-spacing: -0.03em;
+  }
+  .logo__mark {
+    width: 1.75rem;
+    height: 1.75rem;
+  }
+
+  /* Кнопки */
+  .btn {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    min-height: 3.25rem;
+    padding: 0 1.75rem;
+    border-radius: var(--r-pill);
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: var(--fs-ui);
+    letter-spacing: -0.01em;
+    white-space: nowrap;
+    transition:
+      background-color var(--dur),
+      color var(--dur),
+      border-color var(--dur),
+      transform 0.2s var(--ease-out);
+  }
+  .btn:active {
+    transform: scale(0.97);
+  }
+  .btn--primary {
+    background: var(--c-mist-ink);
+    color: var(--c-white);
+  }
+  .btn--primary:hover {
+    background: var(--c-ink);
+  }
+  .btn--light {
+    background: var(--c-white);
+    color: var(--c-ink);
+  }
+  .btn--light:hover {
+    background: var(--c-ink);
+    color: var(--c-white);
+  }
+  .btn--ghost {
+    border: 1px solid var(--c-mist);
+    color: var(--c-ink);
+  }
+  .btn--ghost:hover {
+    border-color: var(--c-ink);
+  }
+  .btn--sm {
+    min-height: 2.75rem;
+    padding: 0 1.25rem;
+    font-size: var(--fs-sm);
+  }
+  .btn--xl {
+    min-height: clamp(3.75rem, 3rem + 2vw, 5.5rem);
+    padding: 0 clamp(2rem, 1.5rem + 1.5vw, 3.5rem);
+    font-size: var(--fs-body);
+  }
+  .btn--block {
+    width: 100%;
+  }
+  .btn[disabled] {
+    cursor: progress;
+  }
+
+  /* Спиннер внутри кнопки (состояние loading) */
+  .btn__spinner {
+    position: absolute;
+    inset: 0;
+    margin: auto;
+    width: 1.375rem;
+    height: 1.375rem;
+    border: 2px solid rgb(255 255 255 / 0.35);
+    border-top-color: var(--c-white);
+    border-radius: 50%;
+    opacity: 0;
+    animation: spin 0.8s linear infinite;
+  }
+  .btn.is-loading .btn__label {
+    opacity: 0;
+  }
+  .btn.is-loading .btn__spinner {
+    opacity: 1;
+  }
+
+  /* Круглые стрелки слайдера */
+  .slider-nav {
+    display: flex;
+    gap: 0.5rem;
+  }
+  .slider-nav__btn {
+    display: grid;
+    place-items: center;
+    width: 3rem;
+    height: 3rem;
+    border-radius: var(--r-sm);
+    background: var(--c-mist-ink);
+    color: var(--c-white);
+    transition:
+      background-color var(--dur),
+      opacity var(--dur);
+  }
+  .slider-nav__btn svg {
+    width: 1.25rem;
+    height: 1.25rem;
+  }
+  .slider-nav__btn--prev svg {
+    transform: rotate(180deg);
+  }
+  .slider-nav__btn:hover:not(:disabled) {
+    background: var(--c-ink);
+  }
+  .slider-nav__btn:disabled {
+    background: var(--c-cloud);
+    color: var(--c-mist-ink);
+    cursor: default;
+  }
+
+  /* Шапка секции (компонент, а не layout: внутри неё переопределяется .title-2,
+     поэтому она должна жить в том же слое, что и заголовок).
+     Заголовок + элемент справа (стрелки, рейтинг).
+     Отступ до контента задаёт родитель через gap, а не margin шапки */
+  .section-head {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 1.5rem 2rem;
+  }
+
+  /* Шапка со стрелками слайдера: на узких экранах заголовок во всю ширину,
+     стрелки — отдельной строкой у правого края (там их удобно нажимать большим пальцем).
+     От 490px — в одну строку */
+  .section-head--nav {
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: stretch;
+  }
+  .section-head--nav .title-2 {
+    max-width: none;
+  }
+  .section-head--nav .slider-nav {
+    align-self: flex-end;
+  }
+  @media (width >= 30.625em) {
+    .section-head--nav {
+      flex-direction: row;
+      align-items: flex-end;
+    }
+    .section-head--nav .title-2 {
+      max-width: 16ch;
+    }
+    .section-head--nav .slider-nav {
+      flex-shrink: 0;
+    }
+  }
+
+  /* Заголовок секции в две тональности (приём из референса) */
+  .title-2 {
+    font-size: var(--fs-h2);
+    letter-spacing: -0.045em;
+    line-height: 1.02;
+    max-width: 16ch;
+    text-wrap: balance;
+  }
+  .title-2__tail {
+    color: var(--c-mist-text);
+  }
+
+  /* Кнопки соцсетей */
+  .social-btn {
+    display: grid;
+    place-items: center;
+    width: 3.25rem;
+    height: 3.25rem;
+    border-radius: 50%;
+    border: 1px solid var(--c-mist-soft);
+    transition:
+      background-color var(--dur),
+      color var(--dur),
+      border-color var(--dur);
+  }
+  .social-btn svg {
+    width: 1.375rem;
+    height: 1.375rem;
+  }
+  .social-btn:hover {
+    background: var(--c-ink);
+    border-color: var(--c-ink);
+    color: var(--c-white);
+  }
+
+  /* ---------- ФОРМА ---------- */
+  .form {
+    display: grid;
+    gap: 1.75rem 1.5rem;
+  }
+
+  .form__context {
+    display: inline-flex;
+    justify-self: start;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    border-radius: var(--r-pill);
+    background: var(--c-cloud);
+    font-size: var(--fs-sm);
+  }
+
+  /* Поле с плавающей подписью: label поднимается, когда поле в фокусе или заполнено.
+     Трюк с placeholder=" " позволяет отловить «заполненность» чистым CSS */
+  .field {
+    position: relative;
+  }
+  .field__input {
+    width: 100%;
+    height: 3.5rem;
+    padding: 1.25rem 0 0.375rem;
+    border: 0;
+    border-bottom: 1px solid var(--c-mist);
+    border-radius: 0;
+    background: transparent;
+    font-size: var(--fs-body);
+    transition:
+      border-color var(--dur),
+      box-shadow var(--dur);
+    appearance: none;
+  }
+  .field__input:hover {
+    border-color: var(--c-mist-ink);
+  }
+  .field__input:focus {
+    outline: none;
+    border-color: var(--c-ink);
+    box-shadow: 0 1px 0 0 var(--c-ink);
+  }
+  .field__input:focus-visible {
+    outline: none;
+  }
+
+  .field__label {
+    position: absolute;
+    left: 0;
+    top: 1.125rem;
+    color: var(--c-mist-ink);
+    pointer-events: none;
+    transform-origin: left top;
+    transition:
+      transform var(--dur) var(--ease-out),
+      color var(--dur);
+  }
+  .field__input:focus + .field__label,
+  .field__input:not(:placeholder-shown) + .field__label,
+  .field__label--static {
+    transform: translateY(-1rem) scale(0.78);
+  }
+  .field__input:focus + .field__label {
+    color: var(--c-ink);
+  }
+
+  .field--select .field__input {
+    padding-right: 2rem;
+    cursor: pointer;
+  }
+  .field__chevron {
+    position: absolute;
+    right: 0;
+    top: 1.4rem;
+    width: 1.25rem;
+    height: 1.25rem;
+    pointer-events: none;
+    color: var(--c-mist-ink);
+  }
+
+  .field__error {
+    display: flex;
+    align-items: center;
+    gap: 0.375rem;
+    min-height: 0;
+    margin-top: 0.375rem;
+    font-size: var(--fs-xs);
+    color: var(--c-danger);
+  }
+  .field__error:empty {
+    display: none;
+  }
+
+  /* Состояние: валидно */
+  .field.is-valid .field__input {
+    border-color: var(--c-mist-ink);
+  }
+  .field.is-valid::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 1.375rem;
+    width: 1.125rem;
+    height: 1.125rem;
+    background: var(--c-mist-ink);
+    mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='m5 12.5 4.5 4.5L19 7.5' fill='none' stroke='%23000' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E")
+      center / contain no-repeat;
+  }
+  .field--select.is-valid::after {
+    display: none;
+  }
+
+  /* Состояние: ошибка */
+  .field.is-invalid .field__input {
+    border-color: var(--c-danger);
+    box-shadow: 0 1px 0 0 var(--c-danger);
+  }
+  .field.is-invalid .field__label {
+    color: var(--c-danger);
+  }
+  .field.is-invalid .field__input {
+    animation: shake 0.35s var(--ease-out);
+  }
+
+  /* Состояние: заблокировано (во время отправки) */
+  .form.is-busy .field__input,
+  .form.is-busy .chip,
+  .form.is-busy .checkbox {
+    opacity: 0.55;
+    pointer-events: none;
+  }
+
+  /* Чипы-радиокнопки */
+  .chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+  .chips__legend {
+    width: 100%;
+    margin-bottom: 0.75rem;
+    font-size: var(--fs-sm);
+    color: var(--c-mist-ink);
+  }
+  .chip {
+    position: relative;
+    cursor: pointer;
+  }
+  .chip input {
+    position: absolute;
+    opacity: 0;
+    inset: 0;
+    cursor: pointer;
+  }
+  .chip span {
+    display: inline-flex;
+    align-items: center;
+    min-height: 2.75rem;
+    padding: 0 1.25rem;
+    border-radius: var(--r-pill);
+    background: var(--c-cloud);
+    font-size: var(--fs-ui);
+    transition:
+      background-color var(--dur),
+      color var(--dur);
+  }
+  .chip:hover span {
+    background: #e0e3e6;
+  }
+  .chip input:checked + span {
+    background: var(--c-ink);
+    color: var(--c-white);
+  }
+  .chip input:focus-visible + span {
+    outline: 2px solid var(--c-ink);
+    outline-offset: 2px;
+  }
+
+  /* Чекбокс */
+  .checkbox {
+    display: flex;
+    gap: 0.75rem;
+    align-items: flex-start;
+    cursor: pointer;
+    font-size: var(--fs-sm);
+    line-height: 1.45;
+  }
+  .checkbox__input {
+    position: absolute;
+    opacity: 0;
+    width: 1px;
+    height: 1px;
+  }
+  .checkbox__box {
+    flex-shrink: 0;
+    display: grid;
+    place-items: center;
+    width: 1.375rem;
+    height: 1.375rem;
+    margin-top: 0.0625rem;
+    border: 1.5px solid var(--c-mist);
+    border-radius: 0.375rem;
+    color: transparent;
+    transition:
+      background-color var(--dur),
+      border-color var(--dur),
+      color var(--dur);
+  }
+  .checkbox__box svg {
+    width: 0.875rem;
+    height: 0.875rem;
+  }
+  .checkbox:hover .checkbox__box {
+    border-color: var(--c-mist-ink);
+  }
+  .checkbox__input:checked + .checkbox__box {
+    background: var(--c-ink);
+    border-color: var(--c-ink);
+    color: var(--c-white);
+  }
+  .checkbox__input:focus-visible + .checkbox__box {
+    outline: 2px solid var(--c-ink);
+    outline-offset: 2px;
+  }
+  .checkbox-field.is-invalid .checkbox__box {
+    border-color: var(--c-danger);
+  }
+  .checkbox-field .field__error {
+    margin-left: 2.125rem;
+  }
+
+  /* Ошибка отправки */
+  .form__alert {
+    display: flex;
+    gap: 0.75rem;
+    align-items: flex-start;
+    padding: 1rem 1.25rem;
+    border-radius: var(--r-md);
+    background: var(--c-danger-soft);
+    color: var(--c-danger);
+    font-size: var(--fs-sm);
+    line-height: 1.45;
+  }
+  .form__alert svg {
+    flex-shrink: 0;
+    width: 1.25rem;
+    height: 1.25rem;
+  }
+  .form__alert[hidden] {
+    display: none;
+  }
+
+  /* Успех */
+  .form-success {
+    display: grid;
+    justify-items: start;
+    gap: 1rem;
+    padding-block: 1rem;
+    animation: fade-up 0.5s var(--ease-out);
+  }
+  .form-success[hidden] {
+    display: none;
+  }
+  .form-success:focus {
+    outline: none;
+  }
+  .form-success__icon {
+    display: grid;
+    place-items: center;
+    width: 4rem;
+    height: 4rem;
+    border-radius: 50%;
+    background: var(--c-mist-ink);
+    color: var(--c-white);
+  }
+  .form-success__icon svg {
+    width: 1.75rem;
+    height: 1.75rem;
+    animation: draw 0.6s 0.15s var(--ease-out) both;
+  }
+  .form-success__title {
+    font-size: clamp(1.5rem, 1.2rem + 1vw, 2rem);
+    letter-spacing: -0.03em;
+  }
+  .form-success__text {
+    max-width: 36ch;
+    color: var(--c-mist-ink);
+  }
+
+  /* Кнопка отправки — обычного размера, как все кнопки сайта */
+  .form__submit {
+    justify-self: start;
+  }
+
+  /* ---------- КАСТОМНЫЙ SELECT (nice-select2) ----------
+     Библиотека прячет нативный select и рисует рядом div.nice-select,
+     копируя ему классы select'а — поэтому поле наследует стиль .field__input.
+     Своих стилей библиотеки не подключаем: всё оформление здесь */
+  .hidden-select {
+    display: none;
+  }
+  .nice-select {
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    cursor: pointer;
+    user-select: none;
+  }
+  .nice-select:focus-visible {
+    outline: none;
+    border-color: var(--c-ink);
+    box-shadow: 0 1px 0 0 var(--c-ink);
+  }
+  .nice-select .current {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+  .nice-select-dropdown {
+    position: absolute;
+    top: calc(100% + 0.5rem);
+    left: 0;
+    right: 0;
+    z-index: 10;
+    padding: 0.375rem;
+    border-radius: var(--r-md);
+    background: var(--c-white);
+    box-shadow: var(--shadow-float);
+    opacity: 0;
+    visibility: hidden;
+    translate: 0 -0.5rem;
+    transition:
+      opacity var(--dur) var(--ease-out),
+      translate var(--dur) var(--ease-out),
+      visibility var(--dur);
+  }
+  .nice-select.open .nice-select-dropdown {
+    opacity: 1;
+    visibility: visible;
+    translate: 0 0;
+  }
+  .nice-select .list {
+    max-height: 16rem;
+    margin: 0;
+    padding: 0;
+    overflow-y: auto;
+    list-style: none;
+    overscroll-behavior: contain;
+  }
+  .nice-select .option {
+    padding: 0.75rem 1rem;
+    border-radius: var(--r-sm);
+    font-size: var(--fs-body);
+    line-height: 1.3;
+    transition:
+      background-color var(--dur),
+      color var(--dur);
+  }
+  .nice-select .option:hover,
+  .nice-select .option.focus {
+    background: var(--c-cloud);
+  }
+  .nice-select .option.selected {
+    background: var(--c-mist-ink);
+    color: var(--c-white);
+  }
+  .nice-select .option.disabled {
+    opacity: 0.5;
+    cursor: default;
+  }
+  /* Наш шеврон поворачивается, когда список открыт */
+  .field__chevron {
+    transition: rotate var(--dur) var(--ease-out);
+  }
+  .nice-select.open ~ .field__chevron {
+    rotate: 180deg;
+  }
+
+  /* Container query: форма раскладывается в две колонки по ширине СВОЕГО блока,
+     а не экрана. Поэтому в узкой модалке она в одну колонку, а в секции — в две */
+  .form-wrap {
+    container-type: inline-size;
+  }
+  @container (min-width: 34rem) {
+    .form {
+      grid-template-columns: 1fr 1fr;
+    }
+    .form > * {
+      grid-column: 1 / -1;
+    }
+    .form > .field--half {
+      grid-column: auto;
+    }
+  }
+}

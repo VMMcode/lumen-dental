@@ -1,0 +1,63 @@
+/* ---------- ДИЗАЙН-ТОКЕНЫ ---------- */
+@layer tokens {
+  :root {
+    /* Палитра (из референса + тёмные оттенки для контраста по WCAG) */
+    --c-mist: #9ea8b1; /* фирменный серо-голубой: поверхности */
+    --c-mist-deep: #8995a0; /* поверхности с белым вордмарком: белый 3.06:1 (крупный текст) */
+    --c-mist-soft: #c3cad0; /* кольца, бордеры */
+    --c-mist-text: #7d8892; /* крупный акцентный текст: 3.46:1 на paper */
+    --c-mist-ink: #5f6c77; /* кнопки и мелкий акцент: 5.16:1 на paper */
+    --c-ink: #303030; /* основной текст */
+    --c-ink-strong: #222222; /* мелкий текст на mist-deep: 5.21:1 */
+    --c-cloud: #ebebeb; /* карточки */
+    --c-paper: #fafafa; /* фон страницы */
+    --c-white: #ffffff;
+    --c-danger: #a63a32; /* ошибки: 6.15:1 на paper */
+    --c-danger-soft: #f7eae8;
+
+    /* Шрифты */
+    --font-display: "Manrope", system-ui, -apple-system, "Segoe UI", sans-serif;
+    --font-body: "Onest", system-ui, -apple-system, "Segoe UI", sans-serif;
+
+    /* Типографическая шкала: fluid через clamp, без медиазапросов */
+    /* Всё резиновое: минимум для 360px, рост через vw, потолок для 4K */
+    --fs-wordmark: clamp(
+      4.75rem,
+      11vw,
+      17rem
+    ); /* 11vw — пропорция вордмарка из референса */
+    --fs-manifesto: clamp(1.625rem, 0.8rem + 3.2vw, 5rem);
+    --fs-h2: clamp(1.75rem, 1rem + 3.6vw, 6rem);
+    --fs-h3: clamp(1.125rem, 0.9rem + 0.7vw, 1.75rem);
+    --fs-stat: clamp(2.75rem, 1.5rem + 4vw, 6.5rem);
+    --fs-lead: clamp(1rem, 0.85rem + 0.45vw, 1.375rem);
+    --fs-md: clamp(1rem, 0.9rem + 0.4vw, 1.375rem);
+    --fs-body: clamp(0.9375rem, 0.85rem + 0.3vw, 1.125rem);
+    --fs-ui: clamp(0.875rem, 0.8rem + 0.25vw, 1.0625rem);
+    --fs-sm: clamp(0.8125rem, 0.75rem + 0.25vw, 1rem);
+    --fs-xs: clamp(0.75rem, 0.7rem + 0.2vw, 0.875rem);
+
+    /* Отступы и сетка */
+    --gutter: clamp(1rem, 3vw, 3rem);
+    /* Поле страницы: зазор от края экрана до карточек (и между hero и следующим блоком).
+       Внешние края hero-карточки и всех блоков совпадают, как в референсе */
+    --page-pad: clamp(0.75rem, 0.4rem + 0.7vw, 1.25rem);
+    --container: 150rem; /* защита от ультрашироких экранов: 2400px, на 1920 контейнер почти во всю ширину */
+    --head-gap: clamp(2rem, 4vw, 3.5rem); /* от шапки секции до её контента */
+    --space-section: clamp(4.5rem, 2.5rem + 6vw, 8.5rem);
+    --header-h: 4.5rem;
+
+    /* Радиусы: иерархия, а не один на всё */
+    --r-sm: 0.75rem;
+    --r-md: 1.25rem;
+    --r-lg: 1.75rem;
+    --r-xl: 2.25rem;
+    --r-pill: 999px;
+
+    /* Движение */
+    --ease-out: cubic-bezier(0.2, 0.7, 0.2, 1);
+    --dur: 0.35s;
+
+    --shadow-float: 0 12px 40px -12px rgb(48 48 48 / 0.25);
+  }
+}

@@ -1,0 +1,68 @@
+/* ==========================================================================
+   Порядок каскадных слоёв объявлен здесь, потому что reset.css подключается
+   первым. Слой, объявленный раньше, слабее: reset < tokens < base < layout
+   < components < sections < utilities — независимо от порядка файлов.
+   ========================================================================== */
+@layer reset, tokens, base, layout, components, sections, utilities;
+
+/* ---------- RESET ---------- */
+@layer reset {
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+  * {
+    margin: 0;
+  }
+  html {
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+  }
+  img,
+  svg,
+  picture {
+    display: block;
+    max-width: 100%;
+  }
+  input,
+  button,
+  select,
+  textarea {
+    font: inherit;
+    color: inherit;
+  }
+  button {
+    background: none;
+    border: 0;
+    padding: 0;
+    cursor: pointer;
+  }
+  ul[role="list"],
+  ol[role="list"] {
+    list-style: none;
+    padding: 0;
+  }
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+  fieldset {
+    border: 0;
+    padding: 0;
+    min-width: 0;
+  }
+  address {
+    font-style: normal;
+  }
+  h1,
+  h2,
+  h3,
+  p {
+    overflow-wrap: break-word;
+  }
+  /* Атрибут hidden должен побеждать любой display из компонентов */
+  [hidden] {
+    display: none !important;
+  }
+}
