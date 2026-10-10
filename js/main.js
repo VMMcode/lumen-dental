@@ -479,6 +479,48 @@ function initReveal() {
   items.forEach((el) => observer.observe(el));
 }
 
+/* ---------- Карточки услуг на тачах ----------
+   Ховера нет, поэтому раскрываем карточку, которая стоит у левого края трека
+   (там, куда её доводит scroll-snap). Свайпнула — раскрылась следующая.
+   Тап по свёрнутой карточке докручивает её к краю, и она раскрывается */
+function initServiceCards() {
+  if (!window.matchMedia('(hover: none)').matches) return;
+  const track = $('[data-slider="services"]');
+  if (!track) return;
+  const cards = $$('.service-card', track);
+
+  const update = () => {
+    const anchor = track.getBoundingClientRect().left
+      + (parseFloat(getComputedStyle(track).scrollPaddingInlineStart) || 0);
+    const atEnd = track.scrollLeft >= track.scrollWidth - track.clientWidth - 2;
+    let active = cards[cards.length - 1];
+    if (!atEnd) {
+      let min = Infinity;
+      cards.forEach((card) => {
+        const d = Math.abs(card.getBoundingClientRect().left - anchor);
+        if (d < min) { min = d; active = card; }
+      });
+    }
+    cards.forEach((card) => card.classList.toggle('is-active', card === active));
+  };
+
+  let ticking = false;
+  track.addEventListener('scroll', () => {
+    if (!ticking) { requestAnimationFrame(() => { update(); ticking = false; }); ticking = true; }
+  }, { passive: true });
+  window.addEventListener('resize', update);
+
+  cards.forEach((card) => {
+    card.addEventListener('click', (e) => {
+      if (card.classList.contains('is-active')) return;
+      e.preventDefault();
+      card.scrollIntoView({ behavior: prefersReducedMotion ? 'auto' : 'smooth', block: 'nearest', inline: 'start' });
+    });
+  });
+
+  update();
+}
+
 /* ---------- Пауза фоновой анимации hero вне экрана ---------- */
 function initHeroPause() {
   const hero = $('.hero');
@@ -500,3 +542,4 @@ initBooking();
 initFloatCta();
 initHeroPause();
 initReveal();
+initServiceCards();

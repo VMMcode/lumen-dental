@@ -14,6 +14,9 @@
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
   }
+  /* Блокировка скролла под меню/модалкой. Блокируем и html: в iOS Safari
+     одного body бывает недостаточно */
+  html:has(body.is-locked),
   body.is-locked {
     overflow: hidden;
   }

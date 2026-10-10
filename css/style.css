@@ -32,10 +32,25 @@
   }
   .header.is-scrolled {
     padding-block: var(--page-pad);
+  }
+  /* Подложка с blur — на псевдоэлементе, а не на самой шапке.
+     backdrop-filter на элементе делает его «контейнером» для fixed-потомков:
+     мобильное меню (position: fixed; inset: 0) сжималось бы до размеров шапки
+     и при скролле висело без фона. На ::before этой проблемы нет */
+  .header::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
     background: rgb(250 250 250 / 0.82);
     backdrop-filter: blur(16px) saturate(1.4);
     -webkit-backdrop-filter: blur(16px) saturate(1.4);
     box-shadow: 0 1px 0 rgb(48 48 48 / 0.06);
+    opacity: 0;
+    transition: opacity var(--dur);
+  }
+  .header.is-scrolled::before {
+    opacity: 1;
   }
 
   .header__actions {
@@ -143,6 +158,7 @@
       padding: calc(var(--header-h) + 2.5rem) var(--gutter) 2rem;
       background: var(--c-paper);
       color: var(--c-ink);
+      overscroll-behavior: contain;
       visibility: hidden;
       opacity: 0;
       transition:
@@ -637,53 +653,67 @@
     transform: rotate(45deg);
   }
 
-  /* Раскрытое состояние: ховер, фокус с клавиатуры или тач-устройство */
-  .service-card:hover .service-card__bg,
-  .service-card:focus-within .service-card__bg {
+  /* Раскрытое состояние. Включается:
+     — ховером (только на устройствах с мышью, чтобы на тачах ховер не «залипал»);
+     — фокусом с клавиатуры;
+     — классом .is-active: на тачах его получает карточка у левого края трека
+       при свайпе (main.js), — так эффект работает и без ховера */
+  .service-card:focus-within .service-card__bg,
+  .service-card.is-active .service-card__bg {
     opacity: 1;
     transform: none;
   }
-  .service-card:hover::after,
-  .service-card:focus-within::after {
+  .service-card:focus-within::after,
+  .service-card.is-active::after {
     opacity: 1;
   }
-  .service-card:hover .service-card__title,
-  .service-card:focus-within .service-card__title {
+  .service-card:focus-within .service-card__title,
+  .service-card.is-active .service-card__title {
     color: var(--c-white);
   }
-  .service-card:hover .service-card__num,
-  .service-card:focus-within .service-card__num {
+  .service-card:focus-within .service-card__num,
+  .service-card.is-active .service-card__num {
     opacity: 0;
     transform: translateY(30%);
   }
-  .service-card:hover .service-card__body,
-  .service-card:focus-within .service-card__body {
+  .service-card:focus-within .service-card__body,
+  .service-card.is-active .service-card__body {
     opacity: 1;
     transform: none;
   }
-  .service-card:hover .service-card__btn,
-  .service-card:focus-within .service-card__btn {
+  .service-card:focus-within .service-card__btn,
+  .service-card.is-active .service-card__btn {
     opacity: 1;
   }
 
-  @media (hover: none) {
-    .service-card__bg {
+  @media (hover: hover) {
+    .service-card:hover .service-card__bg {
       opacity: 1;
       transform: none;
     }
-    .service-card::after {
+    .service-card:hover::after {
       opacity: 1;
     }
-    .service-card__title {
+    .service-card:hover .service-card__title {
       color: var(--c-white);
     }
-    .service-card__num {
-      display: none;
+    .service-card:hover .service-card__num {
+      opacity: 0;
+      transform: translateY(30%);
     }
-    .service-card__body,
-    .service-card__btn {
+    .service-card:hover .service-card__body {
       opacity: 1;
       transform: none;
+    }
+    .service-card:hover .service-card__btn {
+      opacity: 1;
+    }
+  }
+
+  /* На тачах скрытая кнопка неактивной карточки не должна ловить нажатия */
+  @media (hover: none) {
+    .service-card:not(.is-active) .service-card__btn {
+      pointer-events: none;
     }
   }
   .service-card__title {
@@ -1346,8 +1376,7 @@
     gap: 1.5rem;
     width: 100%;
     min-height: clamp(5rem, 3.5rem + 2.5vw, 7.5rem);
-    padding: clamp(1.25rem, 0.75rem + 1vw, 2rem)
-      clamp(1.25rem, 0.75rem + 1.25vw, 2.25rem)
+    padding: clamp(1.25rem, 0.75rem + 1vw, 2rem) clamp(1.25rem, 0.75rem + 1.25vw, 2.25rem)
       clamp(1.25rem, 0.75rem + 1vw, 2rem) clamp(1.5rem, 1rem + 1.5vw, 2.75rem);
     text-align: left;
     font-family: var(--font-display);
@@ -1395,8 +1424,7 @@
   .accordion__inner p {
     max-width: 58ch;
     /* Отступ слева совпадает с вопросом, чтобы ответ стоял ровно под ним */
-    padding: 0 clamp(1.5rem, 1rem + 1.5vw, 2.75rem)
-      clamp(1.5rem, 1rem + 1vw, 2.25rem);
+    padding: 0 clamp(1.5rem, 1rem + 1.5vw, 2.75rem) clamp(1.5rem, 1rem + 1vw, 2.25rem);
     color: var(--c-ink);
   }
 
@@ -1623,7 +1651,9 @@
     gap: 0.625rem;
     align-content: start;
   }
-  .footer__list + .footer__list {
+  /* Колонка соцсетей всегда у правого края (первая колонка — внутри <nav>,
+     поэтому соседним селектором её не поймать — нужен свой класс) */
+  .footer__social {
     justify-self: end;
   }
   .footer__list a {
@@ -1767,11 +1797,20 @@
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
     box-shadow: var(--shadow-float);
-    transform: translateY(calc(100% + 2rem));
-    transition: transform 0.45s var(--ease-out);
+    /* Уезжаем вниз на свою высоту + отступ от края + safe-area айфона + запас под тень.
+       Раньше safe-area не учитывалась, и на iPhone плашка торчала снизу */
+    transform: translateY(calc(100% + 0.75rem + env(safe-area-inset-bottom) + 2.5rem));
+    visibility: hidden;
+    transition:
+      transform 0.45s var(--ease-out),
+      visibility 0s 0.45s;
   }
   .float-cta.is-visible {
     transform: none;
+    visibility: visible;
+    transition:
+      transform 0.45s var(--ease-out),
+      visibility 0s;
   }
   .float-cta__phone {
     flex-shrink: 0;
